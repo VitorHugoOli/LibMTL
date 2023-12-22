@@ -61,9 +61,12 @@ def main(params):
     # define encoder and decoders
     def encoder_class(): 
         return resnet_dilated('resnet50')
+
+
     num_out_channels = {'segmentation': 13, 'depth': 1, 'normal': 3}
     decoders = nn.ModuleDict({task: DeepLabHead(2048, 
-                                                num_out_channels[task]) for task in list(task_dict.keys())})
+                                                num_out_channels[task]
+                                                ) for task in list(task_dict.keys())})
     
     class NYUtrainer(Trainer):
         def __init__(self, task_dict, weighting, architecture, encoder_class, 

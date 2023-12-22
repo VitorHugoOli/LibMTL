@@ -35,7 +35,7 @@ If you understand those command-line arguments, you can train an MTL model by ex
 
 **Simple Run**
 ```shell
-python main.py --weighting Nash_MTL --arch Cross_stitch --dataset_path data/ --gpu_id 0 --scheduler step  --mode train --train_bs 2 --test_bs 2 --epochs 1
+python main.py --weighting Nash_MTL --arch Cross_stitch --dataset_path data/ --gpu_id 0 --scheduler step  --mode train --train_bs 64 --test_bs 64 --epochs 1
 ```
 
 ```shell

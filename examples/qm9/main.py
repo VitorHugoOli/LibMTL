@@ -137,6 +137,7 @@ def main(params):
             return out#.view(-1)
     def encoder_class(): 
         return Net()
+
     decoders = nn.ModuleDict({task: nn.Linear(64, 1) for task in list(task_dict.keys())})
     
     class QM9trainer(Trainer):

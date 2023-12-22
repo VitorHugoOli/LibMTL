@@ -46,6 +46,9 @@ def main(params):
     
     # define encoder and decoders
     class Encoder(nn.Module):
+        '''
+        The encoder is responsible for extracting features from the input data.
+        '''
         def __init__(self):
             super(Encoder, self).__init__()
             hidden_dim = 512
@@ -65,6 +68,9 @@ def main(params):
             out = self.hidden_layer(out)
             return out
 
+    '''
+    The decoders are responsible for predicting the output of each task.
+    '''
     decoders = nn.ModuleDict({task: nn.Linear(512, class_num) for task in list(task_dict.keys())})
     
     officeModel = Trainer(task_dict=task_dict, 
